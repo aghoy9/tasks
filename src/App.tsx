@@ -17,6 +17,13 @@ function App(): JSX.Element {
                 <Row>
                     <Col>
                         <img src={logo} alt="One Angry Bird" />
+                        <div
+                            style={{
+                                height: "40px",
+                                width: "30px",
+                                backgroundColor: "red"
+                            }}
+                        ></div>
                     </Col>
                     <Col>
                         Why this bird is angry:
@@ -28,7 +35,7 @@ function App(): JSX.Element {
                         <div
                             style={{
                                 height: "30px",
-                                width: "30px",
+                                width: "40px",
                                 backgroundColor: "red"
                             }}
                         ></div>
