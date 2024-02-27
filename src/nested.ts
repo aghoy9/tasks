@@ -227,23 +227,24 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return questions.map(
-        (question: Question): Question =>
-            question.id === targetId
-                ? newQuestionType === "multiple_choice_question"
-                    ? {
-                          // eslint-disable-next-line indent
-                          ...question,
-                          type: newQuestionType,
-                          options: [...question.options]
-                      }
-                    : {
-                          ...question,
-                          type: newQuestionType,
-                          options: []
-                      }
-                : { ...question }
-    );
+    return questions.map((question: Question): Question => {
+        if (question.id === targetId) {
+            if (newQuestionType === "multiple_choice_question") {
+                return {
+                    ...question,
+                    type: newQuestionType,
+                    options: [...question.options]
+                };
+            } else {
+                return {
+                    ...question,
+                    type: newQuestionType,
+                    options: []
+                };
+            }
+        }
+        return { ...question };
+    });
 }
 
 /**
