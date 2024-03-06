@@ -15,18 +15,10 @@ export function ChooseTeam(): JSX.Element {
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(person: string) {
-        /*
-        if (!team.includes(newMember)) {
-            team.push(newMember);
-        }
-        */
         setTeam([...team, person]);
     }
 
     function clearTeam() {
-        /*
-        team = [];
-        */
         setTeam([]);
     }
 
